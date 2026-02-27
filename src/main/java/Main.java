@@ -4,13 +4,13 @@ public class Main{
     public static void main(){
         assignmentOne variable = new assignmentOne();
         ArrayList<Integer> tempArray = new ArrayList();
-        ArrayList<Integer> tempArraySequel = new ArrayList();
+        ArrayList<Integer> tempArraySequel;
         ArrayList<Integer> rectangleDimensionOne = new ArrayList<>();
         ArrayList<Integer> rectangleDimensionTwo = new ArrayList<>();
         String message = "I like pickles";
 
         variable.subTaskOne(tempArray);
-        variable.subTaskTwo(tempArray, tempArraySequel);
+        tempArraySequel = variable.subTaskTwo(tempArray);
         variable.subTaskThree(tempArray);
         variable.subTaskFour(tempArray);
 

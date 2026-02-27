@@ -8,11 +8,12 @@ public class assignmentOne {
     Random random = new Random();
 
     /**
+     * Adds defined amount of random numbers (int/double) in range of 0 to a bound (excluding bound).
      *
-     * @param randomSeedObject
-     * @param workingHorse
-     * @param size
-     * @param bound
+     * @param randomSeedObject - expects a Random object, defining the seed
+     * @param workingHorse - ArrayList of Integer/Double that is being modified
+     * @param size - amount of random numbers added
+     * @param bound - upper limit of random generation
      */
     public void randomValueAdder(Random randomSeedObject,ArrayList workingHorse, String type, int size, int bound){
         if (type == "Integer") {
@@ -29,7 +30,7 @@ public class assignmentOne {
     /**
      *Adds fixed amount of Integer from 1 to fixed size to an existing (declared) array of Integer.
      *
-     * @param tempArray - declared array variable.
+     * @param tempArray - declared array variable
      */
     public void subTaskOne(ArrayList tempArray) {
         int i = 0;
@@ -41,12 +42,13 @@ public class assignmentOne {
     }
 
     /**
+     * Based on the tempArray creates a second array counting from zero up to tempArray size or ten, if the size
+     * exceeds ten.
      *
-     *
-     * @param tempArray
-     * @param tempArraySequel
+     * @param tempArray - blueprint Array upon which the second is created
      */
-    public void subTaskTwo(ArrayList tempArray, ArrayList tempArraySequel){
+    public ArrayList<Integer> subTaskTwo(ArrayList tempArray){
+        ArrayList<Integer> tempArraySequel = new ArrayList<>();
         int i = 0;
         while (i < tempArray.size()) {
             if (i > 10) {
@@ -56,12 +58,13 @@ public class assignmentOne {
             i++;
         }
         System.out.println(tempArraySequel);
+        return tempArraySequel;
     }
 
     /**
+     * Removes all elements of tempArray lower than 11.
      *
-     *
-     * @param tempArray
+     * @param tempArray - interacted array
      */
     public void subTaskThree(ArrayList<Integer> tempArray){
         int i = 0;
@@ -76,8 +79,11 @@ public class assignmentOne {
     }
 
     /**
+     * Creates a list (tupleReplacement) sized the same as tempArray of random int values. Based on generated
+     * values (elements) performs a math transformation on each of them and puts those into the same tempArray's
+     * element's index. Adds list's elements in the back in reverse.
      *
-     * @param tempArray
+     * @param tempArray - interacting array
      */
     public void subTaskFour(ArrayList tempArray){
         List<Integer> tupleReplacement = new ArrayList<>(); //the same for given task and much easier
@@ -104,15 +110,18 @@ public class assignmentOne {
     }
 
     /**
+     * Requires two arrays that are the same size. Based on two arrays being length and width of a rectangle calculates
+     * the diagonal to find the area of a circumcircle. Calculates the average of given areas. Creates a new array
+     * that filters areas based on being lower than 1.1 of the average. Multiplies left areas and divides
+     * the answer by their amount.
      *
-     * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-     * @param dimensionOne
-     * @param dimensionTwo
+     * @param dimensionOne - array of width/length
+     * @param dimensionTwo - array of length/width
      */
     public void subTaskFive (ArrayList<Integer> dimensionOne, ArrayList<Integer> dimensionTwo) {
         double diagonal;
         ArrayList<Double> circumcircleArea = new ArrayList<>();
-        for (int i = 0; i<dimensionOne.size(); i++) { //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        for (int i = 0; i<dimensionOne.size(); i++) { // arrays must be the same size
             diagonal = Math.pow((Math.pow(dimensionOne.get(i),2)+Math.pow(dimensionTwo.get(i),2)),0.5);
             circumcircleArea.add(Math.PI*Math.pow(diagonal,2)/4);
         }
@@ -133,11 +142,15 @@ public class assignmentOne {
     }
 
     /**
+     * Creates a new array of values in range of lower and upperLimit with a given step. Filters every number
+     * divisible by seven into a new array.
+     * If the amount of sevens is lower than the median between given limits, reverses the array.
+     * Else adds this amount to the beginning of a new array containing this number and all generated numbers.
      *
-     * @param lowerLimit
-     * @param upperLimit
-     * @param step
-     * @return
+     * @param lowerLimit - range beginning
+     * @param upperLimit range end
+     * @param step - step
+     * @return - an ArrayList of either reversed numbers or amount of divisible by 7 elements + generated elements
      */
     public ArrayList subTaskSix (int lowerLimit, int upperLimit, int step) {
         ArrayList<Integer> numbersBetween = new ArrayList<>();
@@ -147,8 +160,8 @@ public class assignmentOne {
             numbersBetween.add(i);
             i += step;
         }
-        ArrayList<Integer> amountOfSevens = numbersBetween.stream().filter(n -> n % 7 ==0).collect(Collectors.toCollection(ArrayList::new));
-        int checkResult = amountOfSevens.size() - (upperLimit-lowerLimit);
+        ArrayList<Integer> everyNumberDivisibleBySeven = numbersBetween.stream().filter(n -> n % 7 ==0).collect(Collectors.toCollection(ArrayList::new));
+        int checkResult = everyNumberDivisibleBySeven.size() - (upperLimit-lowerLimit);
         if (checkResult < 0) {
             Collections.reverse(numbersBetween);
             return numbersBetween;
@@ -164,11 +177,12 @@ public class assignmentOne {
     }
 
     /**
+     * Replaces a chosen word with a censor using .substring method.
      *
-     * @param originalMessage
-     * @param redactionTarget
-     * @param censor
-     * @return
+     * @param originalMessage - an original String message
+     * @param redactionTarget - a target String word
+     * @param censor - a replacement String word
+     * @return - redacted String
      */
     public String subTaskSeven (String originalMessage, String redactionTarget, String censor) {
         StringBuilder redacted = new StringBuilder(); //creates a class re-write a string
