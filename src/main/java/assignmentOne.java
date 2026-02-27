@@ -16,11 +16,11 @@ public class assignmentOne {
      * @param bound - upper limit of random generation
      */
     public void randomValueAdder(Random randomSeedObject,ArrayList workingHorse, String type, int size, int bound){
-        if (type == "Integer") {
+        if (type.equals("Integer")) {
             for (int i = 0; i < size; i++) {
                 workingHorse.add(randomSeedObject.nextInt(bound));
             }
-        } else if (type == "Double") {
+        } else if (type.equals("Double")) {
             for (int i = 0; i < size; i++) {
                 workingHorse.add(randomSeedObject.nextDouble(bound));
             }
@@ -131,7 +131,6 @@ public class assignmentOne {
             tempDouble += each;
         }
         averageTenPercentIncreased = 1.1*tempDouble/circumcircleArea.size();
-        int i = 0;
         ArrayList<Double> filteredCircumcircleArea = circumcircleArea.stream().filter(n -> n<averageTenPercentIncreased).collect(Collectors.toCollection(ArrayList::new));
         tempDouble=1;
         for (Double each : filteredCircumcircleArea){
