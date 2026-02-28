@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -86,7 +85,7 @@ public class assignmentOne {
      * @param tempArray - interacting array
      */
     public void subTaskFour(ArrayList tempArray){
-        List<Integer> tupleReplacement = new ArrayList<>(); //the same for given task and much easier
+        ArrayList<Integer> tupleReplacement = new ArrayList<>(); //the same for given task and much easier
         for(int i = 0;i<tempArray.size();i++){
             tupleReplacement.add(random.nextInt(101));
         }
