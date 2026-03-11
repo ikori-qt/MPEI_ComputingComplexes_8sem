@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -65,15 +66,16 @@ public class assignmentOne {
      *
      * @param tempArray - interacted array
      */
-    public void subTaskThree(ArrayList<Integer> tempArray){
+    public void subTaskThree(List<Integer> tempArray){
         int i = 0;
-        while (i < tempArray.size()) {
-            if (tempArray.get(i) < 11) {
-                tempArray.remove(i);
-                i--;
-            }
-            i++;
-        }
+//        while (i < tempArray.size()) {
+//            if (tempArray.get(i) < 11) {
+//                tempArray.remove(i);
+//                i--;
+//            }
+//            i++;
+//        } // stream filter modification
+        tempArray = tempArray.stream().filter(each -> each > 11).toList();
         System.out.println(tempArray);
     }
 
@@ -159,7 +161,7 @@ public class assignmentOne {
             i += step;
         }
         ArrayList<Integer> everyNumberDivisibleBySeven = numbersBetween.stream().filter(n -> n % 7 ==0).collect(Collectors.toCollection(ArrayList::new));
-        int checkResult = everyNumberDivisibleBySeven.size() - (upperLimit-lowerLimit);
+        int checkResult = everyNumberDivisibleBySeven.size() - (upperLimit-lowerLimit)/2;
         if (checkResult < 0) {
             Collections.reverse(numbersBetween);
             return numbersBetween;
@@ -197,5 +199,16 @@ public class assignmentOne {
             }
         }
         return redacted.toString();
+    }
+
+    /**
+     * Filters emails belonging to a single domain
+     *
+     * @param emailList - ArrayList of available emails
+     * @param domain - required filter domain
+     */
+    public void additionalTask (List<String> emailList, String domain){
+        emailList = emailList.stream().filter(each-> each.contains(domain)).collect(Collectors.toCollection(ArrayList::new));
+        System.out.println(emailList);
     }
 }

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main{
     public static void main(){
@@ -24,5 +26,8 @@ public class Main{
 
         String redacted = variable.subTaskSeven(message, "pickles", "*bleep*");
         System.out.println(redacted);
+
+        ArrayList<String> emailList = new ArrayList<>(Arrays.asList("kidNamedFinger@cool.com", "dogWithAPillow@mpei.ru", "bestTeacherEver@mpei.ru", "littlesjeff1@gmail.com", "whyamidoingthis@yahoo.com", "mewocatZ@yandex.ru", "randomthrowaway78950@gmail.com"));
+        variable.additionalTask(emailList, "@mpei.ru");
     }
 }

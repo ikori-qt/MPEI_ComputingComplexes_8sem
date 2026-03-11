@@ -1,0 +1,71 @@
+{
+    "substation": {
+        "lines": [{
+            "line1": [{
+              "uniqueID" : "HVLineOne", // needs to be GOST complient
+              "voltageClass" : 220,
+              "connectionOne" : "HVCircuitBreakerOne",
+              "connectionTwo" : "Not Connected",
+              "protectedBy" : "HVRelayProtectionOne"
+            }],
+            "line2": [{
+              "uniqueID" : "HVLineTwo",
+              "voltageClass" : 220,
+              "connectionOne" : "HVCircuitBreakerTwo",
+              "connectionTwo" : "Not Connected",
+              "protectedBy" : "HVRelayProtectionTwo"
+            }],
+            "line3": [{
+              "uniqueID" : "HVLineThree",
+              "voltageClass" : 220,
+              "connectionOne" : "HVCircuitBreakerThree",
+              "connectionTwo" : "Not Connected",
+              "protectedBy" : "HVRelayProtectionThree"
+            }],
+            "line4": [{
+              "uniqueID" : "HVLineFour",
+              "voltageClass" : 220,
+              "connectionOne" : "HVCircuitBreakerFour",
+              "connectionTwo" : "Not Connected",
+              "protectedBy" : "HVRelayProtectionFour"
+            }],
+            "line5": [{
+              "uniqueID" : "LVLineOne",
+              "voltageClass" : 10,
+              "connectionOne" : "LVCircuitBreakerOne",
+              "connectionTwo" : "Not Connected",
+              "protectedBy" : "LVRelayProtectionOne"
+            }],
+            "line6": [{
+              "uniqueID" : "LVLineTwo",
+              "voltageClass" : 10,
+              "connectionOne" : "LVCircuitBreakerTwo",
+              "connectionTwo" : "Not Connected",
+              "protectedBy" : "LVRelayProtectionTwo"
+          }]
+        }],
+        "breakers" : [{
+            "circuitBreakerOne" : [{
+              "uniqueID" : "HVCircuitBreakerOne",
+              "voltageClass" : 220,
+              "connectionOne" : "HVLineOne",
+              "connectionTwo" : "HVBusOne",
+              "protectedBy" : "HVRelayProtectionFive"
+            }],
+            "circuitBreakerTwo" : [{
+              "uniqueID" : "HVCircuitBreakerTwo",
+              "voltageClass" : 220,
+              "connectionOne" : "HVLineTwo",
+              "connectionTwo" : "HVBusOne",
+              "protectedBy" : "HVRelayProtectionSix",
+            }],
+            "circuitBreakerTwo" : [{
+              "uniqueID" : "HVCircuitBreakerTwo",
+              "voltageClass" : 220,
+              "connectionOne" : "HVLineTwo",
+              "connectionTwo" : "HVBusOne",
+              "protectedBy" : "HVRelayProtectionSix",
+            }],
+        }]
+    }
+}
