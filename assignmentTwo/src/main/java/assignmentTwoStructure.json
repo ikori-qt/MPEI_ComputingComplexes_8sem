@@ -1,71 +1,446 @@
 {
     "substation": {
-        "lines": [{
-            "line1": [{
-              "uniqueID" : "HVLineOne", // needs to be GOST complient
+        "lines": {
+            "line1": {
+              "uniqueID" : "W1",
               "voltageClass" : 220,
-              "connectionOne" : "HVCircuitBreakerOne",
+              "connectionOne" : "Q1",
               "connectionTwo" : "Not Connected",
-              "protectedBy" : "HVRelayProtectionOne"
-            }],
-            "line2": [{
-              "uniqueID" : "HVLineTwo",
+              "protectedFirst" : "OCR1",
+              "backupProtection" : {
+                "one" : "MTZ1"
+              }
+            },
+            "line2": {
+              "uniqueID" : "W2",
               "voltageClass" : 220,
-              "connectionOne" : "HVCircuitBreakerTwo",
+              "connectionOne" : "Q2",
               "connectionTwo" : "Not Connected",
-              "protectedBy" : "HVRelayProtectionTwo"
-            }],
-            "line3": [{
-              "uniqueID" : "HVLineThree",
+              "protectedFirst" : "OCR2",
+              "backupProtection" : {
+                "one" : "MTZ2"
+              }
+            },
+            "line3": {
+              "uniqueID" : "W3",
               "voltageClass" : 220,
-              "connectionOne" : "HVCircuitBreakerThree",
+              "connectionOne" : "Q3",
               "connectionTwo" : "Not Connected",
-              "protectedBy" : "HVRelayProtectionThree"
-            }],
-            "line4": [{
-              "uniqueID" : "HVLineFour",
+              "protectedFirst" : "OCR3",
+              "backupProtection" : {
+                "one" : "MTZ3"
+              }
+            },
+            "line4": {
+              "uniqueID" : "W4",
               "voltageClass" : 220,
-              "connectionOne" : "HVCircuitBreakerFour",
+              "connectionOne" : "Q4",
               "connectionTwo" : "Not Connected",
-              "protectedBy" : "HVRelayProtectionFour"
-            }],
-            "line5": [{
-              "uniqueID" : "LVLineOne",
+              "protectedFirst" : "OCR4",
+              "backupProtection" : {
+                "one" : "MTZ4"
+              }
+            },
+            "line5": {
+              "uniqueID" : "W5",
               "voltageClass" : 10,
-              "connectionOne" : "LVCircuitBreakerOne",
+              "connectionOne" : "Q8",
               "connectionTwo" : "Not Connected",
-              "protectedBy" : "LVRelayProtectionOne"
-            }],
-            "line6": [{
-              "uniqueID" : "LVLineTwo",
+              "protectedFirst" : "OCR7",
+              "backupProtection" : {
+                "one" : "MTZ7",
+                "two" : "MTZ5",
+                "three" : "MTZ1",
+                "four" : "MTZ2"
+              }
+            },
+            "line6": {
+              "uniqueID" : "W6",
               "voltageClass" : 10,
-              "connectionOne" : "LVCircuitBreakerTwo",
+              "connectionOne" : "Q9",
               "connectionTwo" : "Not Connected",
-              "protectedBy" : "LVRelayProtectionTwo"
-          }]
-        }],
-        "breakers" : [{
-            "circuitBreakerOne" : [{
-              "uniqueID" : "HVCircuitBreakerOne",
+              "protectedFirst" : "OCR8",
+              "backupProtection" : {
+                "one" : "MTZ8",
+                "two" : "MTZ6",
+                "three" : "MTZ3",
+                "four" : "MTZ4"
+              }
+          }
+        },
+        "breakers" : {
+            "circuitBreakerOne" : {
+              "uniqueID" : "Q1",
               "voltageClass" : 220,
-              "connectionOne" : "HVLineOne",
-              "connectionTwo" : "HVBusOne",
-              "protectedBy" : "HVRelayProtectionFive"
-            }],
-            "circuitBreakerTwo" : [{
-              "uniqueID" : "HVCircuitBreakerTwo",
+              "state" : "on",
+              "connectionOne" : "W1",
+              "connectionTwo" : "B1",
+              "protectedFirst" : "OCR1",
+              "backupProtection" : {
+                "one" : "OCR3"
+              }
+            },
+            "circuitBreakerTwo" : {
+              "uniqueID" : "Q2",
               "voltageClass" : 220,
-              "connectionOne" : "HVLineTwo",
-              "connectionTwo" : "HVBusOne",
-              "protectedBy" : "HVRelayProtectionSix",
-            }],
-            "circuitBreakerTwo" : [{
-              "uniqueID" : "HVCircuitBreakerTwo",
+              "state" : "on",
+              "connectionOne" : "W2",
+              "connectionTwo" : "B1",
+              "protectedFirst" : "OCR1",
+              "backupProtection" : {
+                "one" : "OCR3"
+              }
+            },
+            "circuitBreakerThree" : {
+              "uniqueID" : "Q3",
               "voltageClass" : 220,
-              "connectionOne" : "HVLineTwo",
-              "connectionTwo" : "HVBusOne",
-              "protectedBy" : "HVRelayProtectionSix",
-            }],
-        }]
+              "state" : "on",
+              "connectionOne" : "W3",
+              "connectionTwo" : "B2",
+              "protectedFirst" : "OCR1",
+              "backupProtection" : {
+                "one" : "OCR3"
+              }
+            },
+            "circuitBreakerFour" : {
+              "uniqueID" : "Q4",
+              "voltageClass" : 220,
+              "state" : "on",
+              "connectionOne" : "W4",
+              "connectionTwo" : "B2",
+              "protectedFirst" : "OCR1",
+              "backupProtection" : {
+                "one" : "OCR3"
+              }
+            },
+            "circuitBreakerFive" : {
+              "uniqueID" : "Q5",
+              "voltageClass" : 220,
+              "state" : "off",
+              "connectionOne" : "B1",
+              "connectionTwo" : "B2",
+              "protectedFirst" : "OCR1",
+              "backupProtection" : {
+                "one" : "OCR3",
+                "two" : "DCR1",
+                "three" : "DCR2"
+              }
+            },
+            "circuitBreakerSix" : {
+              "uniqueID" : "Q6",
+              "voltageClass" : 220,
+              "state" : "on",
+              "connectionOne" : "B1",
+              "connectionTwo" : "T1",
+              "protectedFirst" : "OCR1",
+              "backupProtection" : {
+                "one" : "OCR3"
+              }
+            },
+            "circuitBreakerSeven" : {
+              "uniqueID" : "Q7",
+              "voltageClass" : 220,
+              "state" : "on",
+              "connectionOne" : "B2",
+              "connectionTwo" : "T2",
+              "protectedFirst" : "OCR1",
+              "backupProtection" : {
+                "one" : "OCR3"
+              }
+            },
+            "circuitBreakerEight" : {
+              "uniqueID" : "Q8",
+              "voltageClass" : 10,
+              "state" : "on",
+              "connectionOne" : "B3",
+              "connectionTwo" : "W5",
+              "protectedFirst" : "OCR2",
+              "backupProtection" : {
+                "one" : "OCR4"
+              }
+            },
+            "circuitBreakerNine" : {
+              "uniqueID" : "Q9",
+              "voltageClass" : 10,
+              "state" : "on",
+              "connectionOne" : "B4",
+              "connectionTwo" : "W6",
+              "protectedFirst" : "OCR2",
+              "backupProtection" : {
+                "one" : "OCR4"
+              }
+            },
+            "circuitBreakerTen" : {
+              "uniqueID" : "Q10",
+              "voltageClass" : 10,
+              "state" : "off",
+              "connectionOne" : "B3",
+              "connectionTwo" : "B4",
+              "protectedFirst" : "OCR1",
+              "backupProtection" : {
+                "one" : "OCR3",
+                "two" : "DCR1",
+                "three" : "DCR2"
+              }
+            }
+        },
+        "buses" : {
+            "busOne" : {
+              "uniqueID" : "B1",
+              "voltageClass" : 220,
+              "connections" : {
+                "connectionOne" : "Q1",
+                "connectionTwo" : "Q2",
+                "connectionThree" : "Q5",
+                "connectionFour" : "Q6"
+              },
+              "protectedFirst" : "OCR1",
+              "backupProtection" : {
+                "one" : "OCR2",
+                "two" : "MTZ1",
+                "three" : "MTZ2"
+              }
+            },
+            "busTwo" : {
+              "uniqueID" : "B2",
+              "voltageClass" : 220,
+              "connections" : {
+                "connectionOne" : "Q3",
+                "connectionTwo" : "Q4",
+                "connectionThree" : "Q5",
+                "connectionFour" : "Q7"
+              },
+              "protectedFirst" : "OCR3",
+              "backupProtection" : {
+                "one" : "OCR4",
+                "two" : "MTZ3",
+                "three" : "MTZ4"
+              }
+            },
+            "busThree" : {
+              "uniqueID" : "B3",
+              "voltageClass" : 10,
+              "connections" : {
+                "connectionOne" : "T1",
+                "connectionTwo" : "Q8",
+                "connectionThree" : "Q10"
+              },
+              "protectedFirst" : "OCR5",
+              "backupProtection" : {
+                "one" : "MTZ5",
+                "two" : "OCR1",
+                "three" : "OCR2"
+              }
+            },
+            "busFour" : {
+              "uniqueID" : "B4",
+              "voltageClass" : 10,
+              "connections" : {
+                "connectionOne" : "T2",
+                "connectionTwo" : "Q9",
+                "connectionThree" : "Q10"
+              },
+              "protectedFirst" : "OCR6",
+              "backupProtection" : {
+                "one" : "MTZ6",
+                "two" : "OCR3",
+                "three" : "OCR4"
+              }
+            }
+        },
+        "transformers" : {
+            "transformerOne": {
+                "uniqueID": "T1",
+                "highVoltage": 220,
+                "lowVoltage": 10,
+                "connectionOne": "Q6",
+                "connectionTwo": "B3",
+                "protectedFirst" : "OCR5",
+                "backupProtection" : {
+                  "one" : "MTZ5",
+                  "two" : "GAS1",
+                  "three" : "OCR1",
+                  "four" : "OCR2"
+                }
+              },
+            "transformerTwo": {
+                "uniqueID": "T2",
+                "highVoltage": 220,
+                "lowVoltage": 10,
+                "connectionOne": "Q7",
+                "connectionTwo": "B4",
+                "protectedFirst" : "OCR6",
+                "backupProtection" : {
+                  "one" : "MTZ6",
+                  "two" : "GAS2",
+                  "three" : "OCR3",
+                  "four" : "OCR4"
+              }
+            }
+        },
+        "protections" : {
+            "protectionOne": {
+              "uniqueID": "OCR1",
+              "type" : "firstResponse",
+              "voltageClass": 220,
+              "protects" : "L1",
+              "triggers" : "Q1",
+              "currentValues": 1000,
+              "failRate" : 0.1
+            },
+            "protection2": {
+              "uniqueID": "OCR2",
+              "type" : "firstResponse",
+              "voltageClass": 220,
+              "protects" : "L2",
+              "triggers" : "Q2",
+              "currentValues": 1000,
+              "failRate" : 0.1
+            },
+            "protection3": {
+              "uniqueID": "OCR3",
+              "type" : "firstResponse",
+              "voltageClass": 220,
+              "protects" : "L3",
+              "triggers" : "Q3",
+              "currentValues": 1000,
+              "failRate" : 0.1
+            },
+            "protection4": {
+              "uniqueID": "OCR4",
+              "type" : "firstResponse",
+              "voltageClass": 220,
+              "protects" : "L4",
+              "triggers" : "Q4",
+              "currentValues": 1000,
+              "failRate" : 0.1
+            },
+            "protection5": {
+              "uniqueID": "OCR5",
+              "type" : "firstResponse",
+              "voltageClass": 220,
+              "protects" : "T1",
+              "triggers" : "Q6 Q10(?)",
+              "currentValues": 1000,
+              "failRate" : 0.1
+            },
+            "protection6": {
+              "uniqueID": "OCR6",
+              "type" : "firstResponse",
+              "voltageClass": 220,
+              "protects" : "T2",
+              "triggers" : "Q7 Q10(?)",
+              "currentValues": 1000,
+              "failRate" : 0.1
+            },
+            "protection7": {
+              "uniqueID": "OCR7",
+              "type" : "firstResponse",
+              "voltageClass": 10,
+              "protects" : "L5",
+              "triggers" : "Q8",
+              "currentValues": 1000,
+              "failRate" : 0.1
+            },
+            "protection8": {
+              "uniqueID": "OCR8",
+              "type" : "firstResponse",
+              "voltageClass": 10,
+              "protects" : "L6",
+              "triggers" : "Q9",
+              "currentValues": 1000,
+              "failRate" : 0.1
+            },
+            "protection9": {
+              "uniqueID": "MTZ1",
+              "type" : "backup",
+              "voltageClass": 220,
+              "protects" : "L1",
+              "triggers" : "Q1",
+              "currentValues": 250,
+              "failRate" : 0.1
+            },
+            "protection10": {
+              "uniqueID": "MTZ2",
+              "type" : "backup",
+              "voltageClass": 220,
+              "protects" : "L2",
+              "triggers" : "Q2",
+              "currentValues": 250,
+              "failRate" : 0.1
+            },
+            "protection11": {
+              "uniqueID": "MTZ3",
+              "type" : "backup",
+              "voltageClass": 220,
+              "protects" : "L3",
+              "triggers" : "Q3",
+              "currentValues": 250,
+              "failRate" : 0.1
+            },
+            "protection12": {
+              "uniqueID": "MTZ4",
+              "type" : "backup",
+              "voltageClass": 220,
+              "protects" : "L4",
+              "triggers" : "Q4",
+              "currentValues": 250,
+              "failRate" : 0.1
+            },
+            "protection13": {
+              "uniqueID": "MTZ5",
+              "type" : "backup",
+              "voltageClass": 220,
+              "protects" : "T1",
+              "triggers" : "Q6 Q10(?)",
+              "currentValues": 250,
+              "failRate" : 0.1
+            },
+            "protection14": {
+              "uniqueID": "MTZ6",
+              "type" : "backup",
+              "voltageClass": 220,
+              "protects" : "T2",
+              "triggers" : "Q7 Q10(?)",
+              "currentValues": 250,
+              "failRate" : 0.1
+            },
+            "protection15": {
+              "uniqueID": "MTZ7",
+              "type" : "backup",
+              "voltageClass": 10,
+              "protects" : "L5",
+              "triggers" : "Q1",
+              "currentValues": 150,
+              "failRate" : 0.1
+            },
+            "protection16": {
+              "uniqueID": "MTZ8",
+              "type" : "backup",
+              "voltageClass": 10,
+              "protects" : "L6",
+              "triggers" : "Q1",
+              "currentValues": 150,
+              "failRate" : 0.1
+            },
+            "protection17": {
+              "uniqueID": "GAS1",
+              "type" : "backup",
+              "voltageClass": 220,
+              "protects" : "T1",
+              "triggers" : "Q1",
+              "currentValues": 500,
+              "failRate" : 0.1
+            },
+            "protection18": {
+              "uniqueID": "GAS2",
+              "type" : "backup",
+              "voltageClass": 220,
+              "protects" : "T2",
+              "triggers" : "Q1",
+              "currentValues": 500,
+              "failRate" : 0.1
+            }
+        }
     }
 }
