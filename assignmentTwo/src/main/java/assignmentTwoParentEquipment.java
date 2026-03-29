@@ -36,13 +36,4 @@ public class assignmentTwoParentEquipment implements assignmentTwoStringGetter {
 
     public ArrayList<String> getSecondResponse() {return (ArrayList<String>) this.secondResponse.clone(); } //why do i wrap this as a (ArrayList)?
 
-    public void fillBackups (String relayName) {this.secondResponse.add(relayName);}
-
-    public String returnABackup (int calls) {
-        if (this.secondResponse.size() > calls) {
-            return this.secondResponse.get(calls);
-        } else {
-            return "No more protection left :P";
-        }
-    }
 }
