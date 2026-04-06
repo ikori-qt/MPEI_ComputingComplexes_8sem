@@ -82,17 +82,17 @@ public class assignmentTwoShortCircuit {
         logger.log(Level.INFO, String.format("The chosen equipment IS \"%s\"", everythingExceptBreakers.get(eqType).get(eqName).getUniqueID()));
         logger.log(Level.INFO, String.format("Current amount is %.1f", tempCurrent));
 
-        if (everythingExceptBreakers.get(eqType).get(eqName) instanceof assignmentTwoBus) {
-            logger.log(Level.INFO, "BUS CIRCUIT LOGIC IS UNIMPLEMENTED REASON GIVEN COMPLEXITY");
-            /*
-             this requires knowledge or where the power comes from, every breaker reliable for it
-             and this requires the logic to be changed into a MUCH better one, but the one that requires a rewrite +
-             more data that will make this an entire diploma project.
-
-             The real way to implement this IS using a short circuit calculator. I've worked on it. I can see how this "bruteforce" method is better.
-             */
-        }
-        else {
+//        if (everythingExceptBreakers.get(eqType).get(eqName) instanceof assignmentTwoBus) {
+//            logger.log(Level.INFO, "BUS CIRCUIT LOGIC IS UNIMPLEMENTED REASON GIVEN COMPLEXITY");
+//            /*
+//             this requires knowledge or where the power comes from, every breaker reliable for it
+//             and this requires the logic to be changed into a MUCH better one, but the one that requires a rewrite +
+//             more data that will make this an entire diploma project.
+//
+//             The real way to implement this IS using a short circuit calculator. I've worked on it. I can see how this "bruteforce" method is better.
+//             */
+//        }
+//        else {
             String tempSelectedRelay = everythingExceptBreakers.get(eqType).get(eqName).getFirstResponseRelay(); //cannot call a method from children the moment their type is ambiguous
             assignmentTwoRelays theActualObject = relays.stream().filter(relay -> (relay.getUniqueID().equals(tempSelectedRelay))).findAny().get(); //magic to get it into a single variable
             theChecker = handleWorkings(theActualObject, tempCurrent);
@@ -111,6 +111,6 @@ public class assignmentTwoShortCircuit {
             if (!theChecker) {
                 willItBeGoneOnItsOwn(everythingExceptBreakers.get(eqType).get(eqName).getUniqueID());
             }
-        }
+//        }
     }
 }
