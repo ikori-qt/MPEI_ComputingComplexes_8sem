@@ -1,0 +1,65 @@
+{
+  "deltaT": 0.00001,
+  "calculationLength": 0.06,
+  "branches": [
+    {
+      "id": 0,
+      "startsFrom": 1,
+      "endsIn": 0,
+      "elements": [
+        { "type": "EMF", "isAPartOf" : 0, "name": "E2", "EMF": 20.0 },
+        { "type": "resistance", "isAPartOf" : 0, "name": "R2", "R": 10.0 }
+      ]
+    },
+    {
+      "id": 1,
+      "startsFrom": 0,
+      "endsIn": 1,
+      "elements": [
+        { "type": "EMF", "isAPartOf" : 0, "name": "E2", "EMF": -10.0 },
+        { "type": "inductance", "isAPartOf" : 1, "name": "L5", "L": 0.01 }
+      ]
+    },
+    {
+      "id": 2,
+      "startsFrom": 3,
+      "endsIn": 2,
+      "elements": [
+        { "type": "capacitance", "isAPartOf" : 2, "name": "C1", "C": 0.0001 }
+      ]
+    },
+    {
+      "id": 3,
+      "startsFrom": 0,
+      "endsIn": 3,
+      "elements": [
+        { "type": "currentSource", "isAPartOf" : 3, "name": "J3", "J": 3.0 }
+      ]
+    },
+    {
+      "id": 4,
+      "startsFrom": 3,
+      "endsIn": 1,
+      "elements": [
+        { "type": "resistance", "isAPartOf" : 4, "name": "R4", "R": 5.0 }
+      ]
+    },
+    {
+      "id": 5,
+      "startsFrom": 1,
+      "endsIn": 2,
+      "elements": [
+        { "type": "EMF", "isAPartOf" : 0, "name": "E2", "EMF": 5.0 },
+        { "type": "resistance", "isAPartOf" : 5, "name": "R6", "R": 3.0 }
+      ]
+    },
+    {
+      "id": 6,
+      "startsFrom": 1,
+      "endsIn": 2,
+      "elements": [
+        { "type": "capacitance", "isAPartOf" : 6, "name": "C7", "C": 0.0005 }
+      ]
+    }
+  ]
+}
