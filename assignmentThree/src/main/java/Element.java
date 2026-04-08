@@ -80,7 +80,7 @@ class Inductance extends Element implements RememberDeltaT {
     }
 
     @Override
-    public void setNewEquivalentEMF(Double createdCurrent) { /// replaced order *
+    public void setNewEquivalentEMF(Double createdCurrent) {
         this.dependentStartingVoltage = (this.deltaTDependentEquivalentResistance)*
                 createdCurrent -
                 ((this.deltaTDependentNextUseEMF != null ) ? this.deltaTDependentNextUseEMF : 0.0);
@@ -119,11 +119,11 @@ class Capacitance extends Element implements RememberDeltaT {
     }
 
     /**
-     * Here instead of using a controlled parameter (Voltage) we cheat by using current?
+     * Here instead of using a controlled parameter (Voltage) we cheat by using current
      * @param createdCurrent - got from a potential difference + EMF / eqResistance
      */
     @Override
-    public void setNewEquivalentEMF(Double createdCurrent) { /// order changed here too
+    public void setNewEquivalentEMF(Double createdCurrent) {
         this.startingVoltage = this.deltaTDependentEquivalentResistance *
                 createdCurrent -
                 ((this.deltaTDependentNextUseEMF != null ) ? this.deltaTDependentNextUseEMF : 0.0);

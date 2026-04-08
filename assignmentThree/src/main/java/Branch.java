@@ -24,22 +24,12 @@ class Branch {
         }
     }
 
-//    /**
-//     * Should summarize updated EMFs and put it into the Eq box
-//     */
-//    public void collectTimeDependentEMF () { /// //////////////////////////////////////////////////////////////
-//        this.collectedTimeDependentEMF = 0.0;
-//        for (Element each : elements) {
-//            this.collectedTimeDependentEMF += each.getEquivalentEmf();
-//        }
-//    }
-
     /**
      * Should receive the updated versions of the EMFs inside each element, or change them TRIGGERS AUTOMATICALLY in module below
      */
-    public void updateAndCollectTimeDependentEMF() {   /// /////////////////////////////////////////////////////////////////////////////
+    public void updateAndCollectTimeDependentEMF() {
         if (this.momentPotentialDifference !=null) {
-            this.momentCurrent = ((this.momentPotentialDifference + this.collectedTimeDependentEMF) / /// ///potential issue regarding +/-
+            this.momentCurrent = ((this.momentPotentialDifference + this.collectedTimeDependentEMF) /
                     this.collectedEquivalentResistance) +
                     this.currentSourcesSum;
 

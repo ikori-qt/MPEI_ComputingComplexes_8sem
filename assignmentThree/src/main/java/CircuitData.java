@@ -24,7 +24,6 @@ class CircuitData {
     private SimpleMatrix updEMFs;
     private SimpleMatrix momentPotentials;
     private SimpleMatrix momentPotentialDifferences;
-//    public Double[][] compiledPotentialDifferences;
 
     private XYSeries series = new XYSeries("Voltage Over Time");
 
@@ -78,7 +77,6 @@ class CircuitData {
         }
 
         for (Branch each : branches) {
-//            each.updateAndCollectTimeDependentEMF();
             this.updEMFs.set(each.id,0, (each.collectedTimeDependentEMF != null) ? each.collectedTimeDependentEMF : 0.0);
         }
     }
@@ -124,8 +122,6 @@ class CircuitData {
         System.out.println(Y);
         this.createJMatrix();
         this.updateEMFMatrix();
-
-//        this.compiledPotentialDifferences = new Double[this.branches.size()][(int) (this.calculationLength / this.deltaT)];
 
         for (Double time = 0.0; time < calculationLength; time += deltaT) {
             calculatePotentials(time);
