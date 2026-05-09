@@ -12,6 +12,8 @@
         <module>assignmentOne</module>
         <module>assignmentTwo</module>
         <module>assignmentThree</module>
+        <module>assignmentFour</module>
+        <module>assignmentFive</module>
     </modules>
 
     <properties>
