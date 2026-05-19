@@ -1,0 +1,41 @@
+{
+  "equivalent": {
+    "id" : 0,
+    "SShortCircuit" : 60,
+    "nominalVoltageInKv" : 220,
+    "startsFrom" : -1,
+    "endsIn" : 0
+  },
+  "lines" : [
+    {
+      "id": 0,
+      "startsFrom": 1,
+      "endsIn": 2,
+      "lengthInKm" : 20,
+      "type" : "АС 120/19"
+    },
+    {
+      "id": 1,
+      "startsFrom": 1,
+      "endsIn": 2,
+      "lengthInKm" : 30,
+      "type" : "АС 185/24"
+    },
+    {
+      "id": 2,
+      "startsFrom": 2,
+      "endsIn": 3,
+      "lengthInKm" : 25,
+      "type" : "АС 120/19"
+    }
+  ],
+  "transformers" : [
+    {
+      "id": 0,
+      "startsFrom": 0,
+      "endsIn": 1,
+      "type" : "ТДЦ-80000/220 У(ХЛ)"
+    }
+  ],
+  "shortCircuitPoint" : 2
+}
